@@ -1,0 +1,31 @@
+site_name: qqqsw's blog
+site_author: qqqsw
+
+repo_url: https://github.com/qqqsw2768/notes
+site_url: https://qqqsw2768.github.io/notes/
+
+theme: 
+  name: 'material'
+  # custom_dir: overrides
+  language: 'zh'
+
+  features:
+    - content.code.annotate
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+  # 字体
+  font:
+    text: Roboto  # 常规字体
+    code: Roboto Mono  #代码块字体
+  # 暗主题
+  palette:
+    - scheme: slate
+      primary: while  # 主要颜色
+      accent: pink     # 强调色
+
+
+nav:
+  - Home: index.md
+  - About: about.md
