@@ -1,17 +1,18 @@
-# Welcome to MkDocs
+---
+hide:
+    - date
+    - navigation
+    - toc
+# home: true
+---
+<br><br><br><br><br><br>
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+<h1 style="text-align: center;">
+<span style="font-size:50px;">
+Welcome to qqqsw's note!
+</span>
+</h1>
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+<span style="display: block; text-align: center; font-size: 18px;">
+[My friends!](./links.md) / 
+[About Me](./about.md)

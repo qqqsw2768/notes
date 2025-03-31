@@ -1,12 +1,14 @@
 site_name: qqqsw's blog
 site_author: qqqsw
 
-repo_url: https://github.com/qqqsw2768/notes
+repo_url: https://github.com/qqqsw2768/notes/
 site_url: https://qqqsw2768.github.io/notes/
 
 theme: 
   name: 'material'
-  # custom_dir: overrides
+  custom_dir: overrides
+  extra_css:
+  - stylesheets/extra.css
   language: 'zh'
 
   features:
@@ -15,17 +17,34 @@ theme:
     - navigation.tabs
     - navigation.indexes
     - navigation.top
+
+    - search.highlight
+  favicon: assets/images/avatar.jpg
   # 字体
+
   font:
-    text: Roboto  # 常规字体
-    code: Roboto Mono  #代码块字体
-  # 暗主题
+    text: "LXGW WenKai TC"
+    code: "JetBrains Mono" 
+
+  # 主题
   palette:
     - scheme: slate
       primary: while  # 主要颜色
       accent: pink     # 强调色
 
+extra_css:
+  - stylesheets/extra.css
 
 nav:
-  - Home: index.md
-  - About: about.md
+  - Home:
+    - index.md
+    - about.md
+  - Computer Basic: 
+    - CS/index.md
+    - CS/CS61b-Lec19-Hashing.md
+    - CS/test.md
+  # - Others: 
+  #   - index.md
+
+markdown_extensions:
+  - admonition
