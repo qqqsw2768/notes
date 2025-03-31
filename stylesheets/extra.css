@@ -1,0 +1,37 @@
+h2 {
+    color: #a1ffe9;
+}
+
+h1 {
+    color: #a0f9e4 !important;
+}
+
+/* 修改导航栏背景色 */
+.md-header {
+    background-color: #070707; 
+}
+
+nav.md-tabs {
+    background-color: #070707;
+}
+
+.md-main {
+    background-color: #000000;
+}
+
+/* 链接高亮 */
+a {
+    color: #8ee5fd; 
+    text-decoration: none; 
+}
+
+/* 鼠标悬停时的颜色 */
+a:hover {
+    color: #71706f; 
+    text-decoration: underline; /* 添加下划线（可选） */
+}
+
+
+.md-nav__item .md-nav__link--active, .md-nav__item .md-nav__link--active code {
+    color: #8ee5fd;
+}

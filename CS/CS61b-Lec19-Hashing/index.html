@@ -11,24 +11,30 @@
         <meta name="author" content="qqqsw">
       
       
+        <link rel="canonical" href="https://qqqsw2768.github.io/notes/CS/CS61b-Lec19-Hashing/">
       
       
+        <link rel="prev" href="../">
       
-      <link rel="icon" href="/notes/assets/images/avatar.jpg">
+      
+        <link rel="next" href="../test/">
+      
+      
+      <link rel="icon" href="../../assets/images/avatar.jpg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
 <meta name="theme-color" content="blue">  <!-- 修改主题颜色 -->
 
     
       
-        <title>qqqsw's blog</title>
+        <title>CS61b_Lec19_Hashing - qqqsw's blog</title>
       
     
     
-      <link rel="stylesheet" href="/notes/assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
       
         
-        <link rel="stylesheet" href="/notes/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -47,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="/notes/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("/notes/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,6 +80,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#dataindexedarray" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -84,7 +95,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="/notes/." title="qqqsw&#39;s blog" class="md-header__button md-logo" aria-label="qqqsw's blog" data-md-component="logo">
+    <a href="../.." title="qqqsw&#39;s blog" class="md-header__button md-logo" aria-label="qqqsw's blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -104,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              CS61b_Lec19_Hashing
             
           </span>
         </div>
@@ -199,7 +210,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/notes/." class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
     
@@ -215,11 +226,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/notes/CS/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -254,7 +267,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/notes/." title="qqqsw&#39;s blog" class="md-nav__button md-logo" aria-label="qqqsw's blog" data-md-component="logo">
+    <a href="../.." title="qqqsw&#39;s blog" class="md-nav__button md-logo" aria-label="qqqsw's blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -307,7 +320,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/notes/." class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -341,7 +354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/notes/about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -367,6 +380,8 @@
       
   
   
+    
+  
   
   
     
@@ -383,19 +398,22 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/notes/CS/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -407,13 +425,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Computer Basic
@@ -426,10 +444,29 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/notes/CS/CS61b-Lec19-Hashing/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    CS61b_Lec19_Hashing
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -439,6 +476,96 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dataindexedarray" class="md-nav__link">
+    <span class="md-ellipsis">
+      DataIndexedArray
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avoiding-collisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avoiding Collisions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integer-overflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integer Overflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#make-a-bucket" class="md-nav__link">
+    <span class="md-ellipsis">
+      Make a Bucket
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hash-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hash Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hash-table-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hash Table Runtime
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load factor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#warning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Warning
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -451,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/notes/CS/test/" class="md-nav__link">
+      <a href="../test/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -491,6 +618,86 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dataindexedarray" class="md-nav__link">
+    <span class="md-ellipsis">
+      DataIndexedArray
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avoiding-collisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avoiding Collisions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integer-overflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integer Overflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#make-a-bucket" class="md-nav__link">
+    <span class="md-ellipsis">
+      Make a Bucket
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hash-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hash Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hash-table-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hash Table Runtime
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load factor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#warning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Warning
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -501,7 +708,122 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+
+                  
+
+
+  
+  
+
+
+  <h1>CS61b_Lec19_Hashing</h1>
+
+<p>理解hash table，让我们从最简单的开始：</p>
+<!--more-->
+<h2 id="dataindexedarray">DataIndexedArray</h2>
+<p>Create an array of booleans indexed by data!
+- Initially all values are false.
+- When an item is added, set appropriate index to true.
+添加了0、5、10在这个DataIndexedArray里：</p>
+<p><img alt="Pasted image 20240427193346.png =100x" src="https://s2.loli.net/2024/07/16/RnNQJYoq6re4dFt.png" /></p>
+<p>如果用这样的数组来存数据的话，仅仅是存数字就需要很多空间，并且还很浪费，而且一些其他的数据，比如字符串，汉字这些没法存，虽然它很快：
+<img alt="Pasted image 20240427193551.png =100x" src="https://s2.loli.net/2024/07/16/TJR2Dvw4iPr9xK6.png" /></p>
+<p>接下来我们继续改进：
+开始存字符串进去，比如cat、dog这些，数字是本身就是index，而字符串如果只是用首位的话就很容易产生冲突 --- cat存第三个，那我cap存第几个呢？</p>
+<h2 id="avoiding-collisions">Avoiding Collisions</h2>
+<p>Use all digits by multiplying each by a power of 27.
+<img alt="Pasted image 20240427194100.png =100x" src="https://s2.loli.net/2024/07/16/Bv7ajx5RynMShCP.png" />
+这种算index的方法和进制很像：
+<img alt="Pasted image 20240427194158.png =100x" src="https://s2.loli.net/2024/07/16/aUlRcgVSkCvu2fs.png" /></p>
+<p>上面只存了小写字母，非常受限，我们再一次改进：
+先引入ascii的概念，第33 - 126位是可见字符，超出ascii就是unicode了，扩大基数（base）
+举例一个中文短语编码（unicode）
+<img alt="Pasted image 20240427194735.png =100x" src="https://s2.loli.net/2024/07/16/UicofBlTXgCbjmG.png" /></p>
+<h2 id="integer-overflow">Integer Overflow</h2>
+<p>数的大小有限制，超出则会溢出，这就导致可能会有两个算出来是一样的index，就是冲突：
+<img alt="Pasted image 20240427195013.png =100x" src="https://s2.loli.net/2024/07/16/3sUXBJpMoVTuLnS.png" /></p>
+<p>（箭头那里是返回true了）</p>
+<p>Overflow can result in collisions, causing incorrect answers.</p>
+<blockquote>
+<p>引入Pigeonhole Principle：
+大致意思是十个鸽子放入九个笼子中，必定有一个笼子有两只鸟（每个笼子都需要有鸽子）
+潜在哈希冲突：项目数量超过了哈希函数的输出情况
+<strong>Pigeonhole principle tells us that collisions are inevitable due to integer overflow</strong>冲突无法避免</p>
+</blockquote>
+<p>那么：
+- 如何解决哈希冲突（collision handling）
+- 如何计算任意一个object的哈希码？（computing a hashCode）</p>
+<h2 id="make-a-bucket">Make a Bucket</h2>
+<p>别急，接着继续改进：
+Suppose N items have the same numerical representation h:
+- Instead of storing true in position h, store a “bucket” of these N items at position h.</p>
+<blockquote>
+<p>How to implement a “bucket”？
+- Conceptually simplest way: LinkedList.
+- Could also use ArrayLists.
+- Could also use an ArraySet.
+- Will see it doesn’t really matter what you do.
+bucket本身的性质并不重要</p>
+</blockquote>
+<p>有冲突的话直接全塞进原地，hash table初具雏形
+<img alt="Pasted image 20240427211300.png =100x" src="https://s2.loli.net/2024/07/16/7tljIoUi6QV3HK5.png" /></p>
+<p>但是我们不需要这么长的list，so looong 的bucket，这不跟链表没差吗。
+答案是模，把长长的bucket斩断分到其他bucket里去</p>
+<h2 id="hash-table">Hash Table</h2>
+<p>然后 <strong>hash table</strong>上场！！
+- Data is converted by a hash function into an integer representation called a hash code. 
+- The hash code is then reduced to a valid index, usually using the modulus operator, e.g. 2348762878 % 10 = 8.
+<img alt="Pasted image 20240427211716.png =100x" src="https://s2.loli.net/2024/07/16/GOVfEuymLqMprZ8.png" /></p>
+<h2 id="hash-table-runtime">Hash Table Runtime</h2>
+<ul>
+<li>The good news: We use way less memory and can now handle arbitrary data.</li>
+<li>The bad news: Worst case runtime is now Θ(Q), where Q is the length of the longest list.</li>
+</ul>
+<p>find x的算法scale：
+<img alt="Pasted image 20240427212000.png =100x" src="https://s2.loli.net/2024/07/16/bqyJzZVmQR5aHs8.png" /></p>
+<h2 id="load-factor">Load factor</h2>
+<p>这样显然不太行，都N了你还不如直接上链表呢，继续改进：
+Suppose we have:
+- An <mark style="background: #FFB8EBA6;">increasing number </mark>of buckets<mark style="background: #BBFABBA6;"> M</mark>.
+- An <mark style="background: #FFB8EBA6;">increasing number</mark> of items <mark style="background: #ADCCFFA6;">N</mark>.<br />
+As long as M = Θ(N), then O(N/M) = O(1).</p>
+<p>N在变大的同时，bucket的数量也跟着大，相比一除就是1了，之前那个bucket定死的是N/5，不就是N。实现的大致方法是判断N/M的比值，比如 &gt; 5时M double一下，这里的比值就是下面的load factor</p>
+<blockquote>
+<p>Even distribution of item is critical for good hash table performance.</p>
+</blockquote>
+<ul>
+<li>Both tables below have<mark style="background: #D2B3FFA6;"> load factor </mark>of N/M = 1.</li>
+<li>Left table is much worse!<ul>
+<li>Contains is Θ(N) for x.
+<img alt="Pasted image 20240427212605.png =100x" src="https://s2.loli.net/2024/07/16/yFDhitJWueGRzE6.png" /></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Default implementation simply returns the memory address of the object.
+Java里面默认的hashcode就是返回当前object的地址，这个方法真聪明。</p>
+</blockquote>
+<h2 id="warning">Warning</h2>
+<ul>
+<li>Never store objects that can change in a HashSet or HashMap!</li>
+<li>Never override equals without also overriding hashCode.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
 
               </article>
             </div>
@@ -526,10 +848,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "/notes/", "features": ["content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight"], "search": "/notes/assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="/notes/assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>

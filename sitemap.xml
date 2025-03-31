@@ -2,10 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://qqqsw2768.github.io/notes/</loc>
-         <lastmod>2025-03-28</lastmod>
+         <lastmod>2025-03-31</lastmod>
     </url>
     <url>
          <loc>https://qqqsw2768.github.io/notes/about/</loc>
-         <lastmod>2025-03-28</lastmod>
+         <lastmod>2025-03-31</lastmod>
+    </url>
+    <url>
+         <loc>https://qqqsw2768.github.io/notes/CS/</loc>
+         <lastmod>2025-03-31</lastmod>
+    </url>
+    <url>
+         <loc>https://qqqsw2768.github.io/notes/CS/CS61b-Lec19-Hashing/</loc>
+         <lastmod>2025-03-31</lastmod>
+    </url>
+    <url>
+         <loc>https://qqqsw2768.github.io/notes/CS/test/</loc>
+         <lastmod>2025-03-31</lastmod>
     </url>
 </urlset>
